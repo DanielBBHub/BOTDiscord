@@ -13,11 +13,13 @@ from dotenv import load_dotenv
 # Cargamos el token de acceso del bot desde el archivo token.env
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
+TOKEN = TOKEN[1:-1]
+print(TOKEN)
 
-# Instanciamos el objeto del cliente de discord
 intents = discord.Intents.default()
 intents.message_content = True
 
+# Instanciamos el objeto del cliente de discord 
 client = MyClient(intents=intents)
 
-client.run("MTAzODQ4MDQ4MTM0OTUzNzgxMg.GDIjO5.PFr1RyJfWMmLXOf6X4WL-5tbLm2UrPs9tNYskk")
+client.run(TOKEN)
