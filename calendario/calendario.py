@@ -1,7 +1,8 @@
 
 from .examen import Examen
+import discord
 
-class Calendario:
+class Calendario(discord.ScheduledEvent):
 
     """ Para la clase calendario se necesitara estructuras de datos para albergar:
         - Fecha examen
@@ -18,7 +19,6 @@ class Calendario:
         self.examenes = dict()
 
 
-
     def anyadir_examen(self, fecha, nombre_asignatura, tipo,*, alumnos=""):
         alumnos_examen = set()
         for alumno in alumnos:
@@ -32,6 +32,9 @@ class Calendario:
             print(llave)
             print(":")
             print(valor)
+
+    """ async def crear_evento(self):
+        await self.eventos.start(status=discord.EventStatus.active) """
         
 
 

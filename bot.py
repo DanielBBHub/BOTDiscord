@@ -1,5 +1,6 @@
 """ Codigo desarrollado para implementar un bot con funcionalidad de calendario (por ahora)
 -Daniel (dabebel)
+-Carlos (carlos)
 
 """
 
