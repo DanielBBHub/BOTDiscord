@@ -17,8 +17,6 @@ class Calendario:
         # fecha: Examen
         self.examenes = dict()
 
-        self.examen = Examen("Redes", "Teoria", "3º")
-        print(f"Nombre: {self.examen.nombre_asignatura}, Tipo: {self.examen.tipo} ")
 
 
     def anyadir_examen(self, fecha, nombre_asignatura, tipo, curso, *, alumnos=""):
