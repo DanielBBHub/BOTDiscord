@@ -19,14 +19,20 @@ class Calendario:
 
 
 
-    def anyadir_examen(self, fecha, nombre_asignatura, tipo, curso, *, alumnos=""):
+    def anyadir_examen(self, fecha, nombre_asignatura, tipo,*, alumnos=""):
         alumnos_examen = set()
         for alumno in alumnos:
             alumnos_examen.add(alumno)
 
-        examen = Examen(nombre_asignatura, tipo, curso, alumnos = alumnos_examen )
-        examen.toString()
-        self.examenes.setdefault(fecha, examen)
-        print(str(self.examenes))
+        examen = Examen(fecha, nombre_asignatura, tipo, alumnos = alumnos_examen )
+        self.examenes.setdefault(nombre_asignatura, examen)
+        
+        for llave, valor in self.examenes.items():
+            print("\nExamenes inscrito: ")
+            print(llave)
+            print(":")
+            print(valor)
+        
+
 
 

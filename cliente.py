@@ -9,7 +9,7 @@ class MyClient(discord.Client):
     
     async def on_ready(self):
         print(f'Logged on as {self.user}!')
-        c.Calendario()
+        self.calendario = c.Calendario()
         self.REGEX = "^\$([a-z]*) !([0-9]*-[0-9]*-[0-9]*) ([A-Z]*[a-z]+) ([A-Z]*[a-z]+)"
         
        
@@ -19,7 +19,8 @@ class MyClient(discord.Client):
 
         
         match = re.match(self.REGEX, message.content)
-        if match:
+        if match.groups()[0] == "examen":
+            self.calendario.anyadir_examen(match.groups()[1],match.groups()[2],match.groups()[3])
             print("Comando: {0} \nArgumentos: {1}".format(match.groups()[0], match.groups()[1:]))
 
         if self.user.mentioned_in(message):

@@ -8,10 +8,10 @@ class Examen:
         - Alumnos a examinar
     
     """
-    def __init__(self, nombre_asignatura, tipo, curso, *, alumnos=""):
+    def __init__(self,fecha, nombre_asignatura, tipo, *, alumnos=""):
         self.nombre_asignatura = nombre_asignatura
         self.tipo = tipo
-        self.curso = curso
+        self.fecha = fecha
         self.alumnos = set()
         for alumno in alumnos:
             alumnos.add(alumno)
@@ -20,10 +20,16 @@ class Examen:
     
     def toString(self):
             return f"""
-            Nombre asignatura: {1},
-            Tipo: {2},             
-            Curso: {3},            
-            Alumnos: {4}
-            """.format(self.nombre_asignatura, self.tipo, self.curso, self.alumnos)
+            Nombre asignatura: {self.nombre_asignatura},
+            Tipo: {self.tipo},             
+            Alumnos: {self.alumnos}
+            """
+
+    def __str__(self):
         
+        return f"""
+            Nombre asignatura: {self.nombre_asignatura},
+            Tipo: {self.tipo},             
+            Alumnos: {self.alumnos}
+            """
     
