@@ -1,4 +1,3 @@
-
 import discord
 import calendario as c
 
@@ -27,6 +26,8 @@ class MyClient(discord.Client):
             if match.groups()[0] == "examen":
                 self.calendario.anyadir_examen(match.groups()[1],match.groups()[2],match.groups()[3])
                 print("Comando: {0} \nArgumentos: {1}".format(match.groups()[0], match.groups()[1:]))
+            #elif match.group()[0] == "miembro":
+
 
         if self.user.mentioned_in(message):
             if "hola" in message.content:
@@ -42,6 +43,6 @@ class MyClient(discord.Client):
     def recoger_miembros(self):
         
         for miembro in self.get_all_members():
-            print(f"Miembro recogido: {miembro}")
+            print(f"Miembro recogido: {miembro.id}")
+            print(f"Miembro recogido: {self.get_user(miembro.id)}")
             
-                    

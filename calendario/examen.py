@@ -1,4 +1,3 @@
-
 class Examen:
     """
     Para la clase examen se necesitara estructuras de datos para albergar:
@@ -12,14 +11,15 @@ class Examen:
         self.nombre_asignatura = nombre_asignatura
         self.tipo = tipo
         self.fecha = fecha
-        self.alumnos = set()
+        self.alumnos = list()
         for alumno in alumnos:
             alumnos.add(alumno)
 
 
     
-    def anyadir_alumno(self, alumno):
-        self.alumnos.add(alumno)
+    def anyadir_alumno(self, alumnos):
+        
+        self.alumnos.append(alumnos)
 
     def __str__(self):
         
@@ -28,4 +28,3 @@ class Examen:
             Tipo: {self.tipo},             
             Alumnos: {self.alumnos}
             """
-    
