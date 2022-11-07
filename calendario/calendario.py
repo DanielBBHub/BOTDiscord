@@ -36,6 +36,7 @@ class Calendario(discord.ScheduledEvent):
     """ async def crear_evento(self):
         await self.eventos.start(status=discord.EventStatus.active) """
         
+    
 
 
 

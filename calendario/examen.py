@@ -18,12 +18,8 @@ class Examen:
 
 
     
-    def toString(self):
-            return f"""
-            Nombre asignatura: {self.nombre_asignatura},
-            Tipo: {self.tipo},             
-            Alumnos: {self.alumnos}
-            """
+    def anyadir_alumno(self, alumno):
+        self.alumnos.add(alumno)
 
     def __str__(self):
         

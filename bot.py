@@ -17,7 +17,8 @@ TOKEN = os.getenv('DISCORD_TOKEN')
 TOKEN = TOKEN[1:-1]
 print(TOKEN)
 
-intents = discord.Intents.default()
+# Permisos de lectura de mensajes, guilds y miembros de estas
+intents = discord.Intents(messages=True, guilds=True, members=True)
 intents.message_content = True
 
 # Instanciamos el objeto del cliente de discord 
